@@ -1,0 +1,554 @@
+{
+	"info": {
+		"_postman_id": "226aab88-bff9-466a-9314-972911ad7376",
+		"name": "express-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9201464"
+	},
+	"item": [
+		{
+			"name": "Participants",
+			"item": [
+				{
+					"name": "Create Participants",
+					"item": [
+						{
+							"name": "Create Participants Actor 1",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZmMyMGM5ZTM1NDgzYzVmZWNkMDNlMSIsInVzZXJJZCI6InNvdW15YWplZXQtYWRtaW4iLCJpYXQiOjE3Mjc3OTk1MDksImV4cCI6MTcyNzgwMzEwOX0.PquOMVCJ9JAI90LST82gTMPBu54jEi35w2F5xdK25lE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Tony Stark\",\r\n    \"age\": 46,\r\n    \"role\": \"Actor\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/participants",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Participants Director",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDM1ZTdhYzY0ODI5MmYxYjMxZmZlNCIsInVzZXJJZCI6InNvdW15YWplZXQtYWRtaW4iLCJpYXQiOjE3MjUxNzk4ODUsImV4cCI6MTcyNTE4MzQ4NX0.uGZ_JiTWAu2e0F6wb3bFJ1gYCdyTYW1jCyRti1XCjqc",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Quentin Tarantino\",\r\n    \"age\": 58,\r\n    \"role\": \"Director\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/participants",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Participants Producer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Steven Spielberg\",\r\n    \"age\": 74,\r\n    \"role\": \"Producer\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/participants",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"participants"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Participants Actor 2",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer {{token}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Leonardo DiCaprio\",\r\n    \"age\": 47,\r\n    \"role\": \"Actor\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/participants",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"participants"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "getAllParticipants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/participants",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"participants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getParticipantsById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/participants/66b7c11f091110b97c0e394f",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"participants",
+								"66b7c11f091110b97c0e394f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateParticipant",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDM1ZTdhYzY0ODI5MmYxYjMxZmZlNCIsInVzZXJJZCI6InNvdW15YWplZXQtYWRtaW4iLCJpYXQiOjE3MjUxMjkyMjEsImV4cCI6MTcyNTEzMjgyMX0.DACPQ2bJDfUW9NgggyPfh_1IQi0ppuo0CXH7pFu6PKg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Tony Stark\",\r\n    \"age\": 30,\r\n    \"role\": \"Actor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/participants/66b7c11f091110b97c0e394f",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"participants",
+								"66b7c11f091110b97c0e394f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete participants",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDM1ZTdhYzY0ODI5MmYxYjMxZmZlNCIsInVzZXJJZCI6InNvdW15YWplZXQtYWRtaW4iLCJpYXQiOjE3MjUxNzc0NDcsImV4cCI6MTcyNTE4MTA0N30.kHirrkc6dCl-xmIEHLJb3jqANvXsns7C0uzEmMl8p70",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDM1ZTdhYzY0ODI5MmYxYjMxZmZlNCIsInVzZXJJZCI6InNvdW15YWplZXQtYWRtaW4iLCJpYXQiOjE3MjUxMjkyMjEsImV4cCI6MTcyNTEzMjgyMX0.DACPQ2bJDfUW9NgggyPfh_1IQi0ppuo0CXH7pFu6PKg",
+								"name": "authorization",
+								"type": "text"
+							},
+							{
+								"key": "Cache-Control",
+								"value": "no-cache",
+								"name": "cache-control",
+								"type": "text"
+							},
+							{
+								"key": "Postman-Token",
+								"value": "<calculated when request is sent>",
+								"name": "postman-token",
+								"type": "text"
+							},
+							{
+								"key": "Host",
+								"value": "<calculated when request is sent>",
+								"name": "host",
+								"type": "text"
+							},
+							{
+								"key": "User-Agent",
+								"value": "PostmanRuntime/7.39.1",
+								"name": "user-agent",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*",
+								"name": "accept",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Encoding",
+								"value": "gzip, deflate, br",
+								"name": "accept-encoding",
+								"type": "text"
+							},
+							{
+								"key": "Connection",
+								"value": "keep-alive",
+								"name": "connection",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/participants/66d4283c182c98e31aec1f01",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"participants",
+								"66d4283c182c98e31aec1f01"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "get all movie",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/movies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create movie",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2ZDM1ZTdhYzY0ODI5MmYxYjMxZmZlNCIsInVzZXJJZCI6InNvdW15YWplZXQtYWRtaW4iLCJpYXQiOjE3MjU1NTc2NDIsImV4cCI6MTcyNTU2MTI0Mn0.fLT2guj6zKMp4L1AHm4KoK3RalCPcI73YiHqJxXxxUM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieName\": \"Inception\",\r\n    \"movieDescription\": \"A skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state.\",\r\n    \"movieDuration\": 148,\r\n    \"movieRating\": 8.8,\r\n    \"genre\": \"Action\",\r\n    \"producer\": \"66ca25495f73d768cbbe8b41\",\r\n    \"director\": \"66ca25465f73d768cbbe8b3f\",\r\n    \"actors\": [\"66ca254c5f73d768cbbe8b43\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/movies",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMovie",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieName\": \"Inception\",\r\n    \"movieDescription\": \"A skilled thief, the absolute best in the dangerous art of extraction, stealing valuable secrets from deep within the subconscious during the dream state.\",\r\n    \"movieDuration\": 150,\r\n    \"movieRating\": 9.8,\r\n    \"genre\": \"Action\",\r\n    \"producer\": \"66ca25495f73d768cbbe8b41\",\r\n    \"director\": \"66ca25465f73d768cbbe8b3f\",\r\n    \"actors\": [\"66ca254c5f73d768cbbe8b43\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/movies/66ca26bc5f73d768cbbe8b46",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"66ca26bc5f73d768cbbe8b46"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMovie",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/movies/66ca26bc5f73d768cbbe8b46",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"movies",
+								"66ca26bc5f73d768cbbe8b46"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"userId\": \"soumyajeet-admin\",\r\n   \"password\": \"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"soumyajeet\",\r\n   \"userId\": \"soumyajeet-admin\",\r\n   \"password\": \"admin@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ping",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/ping",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/docs",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"docs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "healthCheck",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/healthCheck",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"healthCheck"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

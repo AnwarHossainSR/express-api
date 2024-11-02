@@ -1,0 +1,38 @@
+{
+  "name": "express-rest-api",
+  "version": "1.0.0",
+  "description": "This is a youtube video tutorial project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "log": "node src/logService/index.js",
+    "devLog": "nodemon src/logService/index.js",
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "bcrypt": "^5.1.1",
+    "express": "^4.19.2",
+    "express-rate-limit": "^7.4.0",
+    "express-validator": "^7.2.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.2",
+    "node-cron": "^3.0.3",
+    "swagger-ui-express": "^5.0.1",
+    "tiny-uid": "^1.1.2",
+    "yamljs": "^0.3.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.11.1",
+    "dotenv": "^16.4.5",
+    "eslint": "^9.11.1",
+    "globals": "^15.9.0",
+    "nodemon": "^3.1.4"
+  }
+}

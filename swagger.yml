@@ -1,0 +1,168 @@
+openapi: 3.0.0
+info:
+  title: API Documentation
+  version: 1.0.0
+  description: API for managing participants
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT  # Optional, specifies that the token is a JWT
+  schemas:
+    Participant:
+      type: object
+      properties:
+        name:
+          type: string
+          description: Name of the participant
+          example: John Doe
+        age:
+          type: integer
+          description: Age of the participant
+          example: 25
+        role:
+          type: string
+          description: Role of the participant
+          enum:
+            - Actor
+            - Director
+            - Producer
+          example: Actor
+      required:
+        - name
+        - age
+        - role
+
+security:
+  - bearerAuth: []  # Global security (optional, but can be useful)
+
+paths:
+  /participants:
+    get:
+      summary: Get all participants
+      description: Retrieve a list of all participants.
+      tags:
+        - Participants
+      responses:
+        200:
+          description: A list of participants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Participant'
+        500:
+          description: Internal server error.
+    post:
+      summary: Create a new participant
+      description: Create a new participant by providing name, age, and role.
+      tags:
+        - Participants
+      security:
+        - bearerAuth: []  # Apply bearer authentication only to POST
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Participant'
+      responses:
+        201:
+          description: Participant created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Participant'
+        400:
+          description: Bad request. Invalid or missing parameters.
+        401:
+          description: Unauthorized. JWT token missing or invalid.
+        500:
+          description: Internal server error.
+
+  /participants/{id}:
+    get:
+      summary: Get participant by ID
+      description: Retrieve a specific participant by their ID.
+      tags:
+        - Participants
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The participant ID
+      responses:
+        200:
+          description: A participant object
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Participant'
+        404:
+          description: Participant not found.
+        500:
+          description: Internal server error.
+    put:
+      summary: Update a participant by ID
+      description: Update the details of an existing participant.
+      tags:
+        - Participants
+      security:
+        - bearerAuth: []  # Apply bearer authentication only to PUT
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The participant ID
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Participant'
+      responses:
+        200:
+          description: Participant updated successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Participant'
+        400:
+          description: Bad request. Invalid input.
+        401:
+          description: Unauthorized. JWT token missing or invalid.
+        404:
+          description: Participant not found.
+        500:
+          description: Internal server error.
+      
+    delete:
+      summary: Delete a participant by ID
+      description: Remove a participant from the system by their ID.
+      tags:
+        - Participants
+      security:
+        - bearerAuth: []  # Apply bearer authentication only to DELETE
+      parameters:
+        - in: path
+          name: id
+          required: true
+          schema:
+            type: string
+          description: The participant ID
+      responses:
+        204:
+          description: Participant deleted successfully.
+        401:
+          description: Unauthorized. JWT token missing or invalid.
+        404:
+          description: Participant not found.
+        500:
+          description: Internal server error.
