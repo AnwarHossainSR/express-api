@@ -14,7 +14,7 @@ This project is a Node.js and Express-based REST API, built following a YouTube 
 1. **Clone the Repository:**
 
    ```bash
-   git clone [https://github.com/your-username/express-rest-api.git](https://github.com/your-username/express-rest-api.git)
+   git clone [https://github.com/AnwarHossainSR/express-rest-api.git](https://github.com/AnwarHossainSR/express-rest-api.git)
    ```
 
 2. **Install Dependencies:**
